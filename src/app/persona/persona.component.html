@@ -1,0 +1,20 @@
+<h2> {{ titulo }}</h2>
+<p> {{ subtitulo }}</p>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>C&eacute;dula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha Nacimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of personas">
+            <td>{{ persona.cedula }}</td>
+            <td>{{ persona.nombre }}</td>
+            <td>{{ persona.apellido }}</td>
+            <td>{{ persona.fecha_nacimiento }}</td>
+        </tr>
+    </tbody>
+</table>
