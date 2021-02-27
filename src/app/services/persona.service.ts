@@ -22,6 +22,6 @@ export class PersonaService {
 
   //Crear una persona
   create(persona: Persona):Observable<Persona>{
-    return this.http.post<Persona>(this.urlEndPointListar, persona);
+    return this.http.post<Persona>(this.urlEndPointCrear, persona);
   }
 }
