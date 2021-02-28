@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from '../persona/persona';
 import { PersonaService } from '../services/persona.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -19,7 +20,11 @@ export class RegistroComponent implements OnInit {
   create() {
     console.log(this.persona)
     this.personaService.create(this.persona).subscribe(
-      res => this.router.navigate(['/persona'])
+      res => {
+        this.router.navigate(['/persona'])
+        console.log("Respuesta: " + res)
+        swal.fire('Registro exitoso', `Persona "${this.persona.nombre}" creada con éxito!`, 'success')
+      }
     );
   }
 }
